@@ -1,8 +1,24 @@
-import React from 'react';
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+
+
 
 import "./style.css"
 const List = () => {
+
+    const [suppliers, setSuppliers] = useState([]);
+
+
+    useEffect(() => {
+
+        axios.get('https://northwind.vercel.app/api/suppliers')
+            .then(res => {
+                setSuppliers(res.data);
+            })
+
+    }, [])
+
     return (
         <div className='suppliers'>
             <h2>Suppliers Table</h2>
@@ -18,104 +34,23 @@ const List = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tokyo Traders</td>
-                        <td>Yoshi Nagase</td>
-                        <td>Marketing Manager</td>
-                        <td>Japan</td>
-                        <td>
-                            <button>delete</button>
-                            <button>edit</button>
-                            <Link to="/detail/:postId">
-                                <button>detail</button>
-                            </Link>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tokyo Traders</td>
-                        <td>Yoshi Nagase</td>
-                        <td>Marketing Manager</td>
-                        <td>Japan</td>
-                        <td>
-                            <button>delete</button>
-                            <button>edit</button>
-                            <Link to="/detail/:postId">
-                                <button>detail</button>
-                            </Link>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tokyo Traders</td>
-                        <td>Yoshi Nagase</td>
-                        <td>Marketing Manager</td>
-                        <td>Japan</td>
-                        <td>
-                            <button>delete</button>
-                            <button>edit</button>
-                            <Link to="/detail/:postId">
-                                <button>detail</button>
-                            </Link>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tokyo Traders</td>
-                        <td>Yoshi Nagase</td>
-                        <td>Marketing Manager</td>
-                        <td>Japan</td>
-                        <td>
-                            <button>delete</button>
-                            <button>edit</button>
-                            <Link to="/detail/:postId">
-                                <button>detail</button>
-                            </Link>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tokyo Traders</td>
-                        <td>Yoshi Nagase</td>
-                        <td>Marketing Manager</td>
-                        <td>Japan</td>
-                        <td>
-                            <button>delete</button>
-                            <button>edit</button>
-                            <Link to="/detail/:postId">
-                                <button>detail</button>
-                            </Link>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tokyo Traders</td>
-                        <td>Yoshi Nagase</td>
-                        <td>Marketing Manager</td>
-                        <td>Japan</td>
-                        <td>
-                            <button>delete</button>
-                            <button>edit</button>
-                            <Link to="/detail/:postId">
-                                <button>detail</button>
-                            </Link>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Tokyo Traders</td>
-                        <td>Yoshi Nagase</td>
-                        <td>Marketing Manager</td>
-                        <td>Japan</td>
-                        <td>
-                            <button>delete</button>
-                            <button>edit</button>
-                            <Link to="/detail/:postId">
-                                <button>detail</button>
-                            </Link>
-                        </td>
-                    </tr>
+                    {suppliers && suppliers.map((item) =>
+
+                        <tr key={item.id}>
+                            <th scope="row">{item.id}</th>
+                            <td>{item.companyName}</td>
+                            <td>{item.contactName}</td>
+                            <td>{item.contactTitle}</td>
+                            <td>{item.address.country}</td>
+                            <td>
+                                <button>delete</button>
+                                <button>edit</button>
+                                <Link to="/detail/:postId">
+                                    <button>detail</button>
+                                </Link>
+                            </td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
 
