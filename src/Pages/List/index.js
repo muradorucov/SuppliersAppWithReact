@@ -45,7 +45,8 @@ const List = () => {
                             <td>
                                 <button>delete</button>
                                 <button>edit</button>
-                                <Link to="/detail/:postId">
+                                
+                                <Link to={'/detail/' + item.id}>
                                     <button>detail</button>
                                 </Link>
                             </td>

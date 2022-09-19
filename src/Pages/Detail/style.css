@@ -1,0 +1,23 @@
+.detailHG {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supplierDetail {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 4px 20px 1px rgb(45 45 45 / 13%);
+    border-radius: 10px;
+    margin: 40px 0;
+    padding: 20px;
+    text-align: center;
+
+}
+
+h2,
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 800px;
+}
