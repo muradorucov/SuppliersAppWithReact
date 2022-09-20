@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router";
 
 import { Link } from "react-router-dom";
+
+import "./App.css";
+
 import AddSupplier from "./Pages/AddSupplier";
 import Detail from "./Pages/Detail";
 import HomePage from "./Pages/Home";
 import List from "./Pages/List";
 import NotFound from "./Pages/NotFound";
-
-
-import "./App.css";
 function App() {
   return (
     <>
@@ -61,7 +61,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/addSupplier" element={<AddSupplier />} />
-        <Route path="/list/" element={<List />} />
+        <Route path="/list" element={<List />} />
         <Route path="/detail/:postId" element={<Detail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

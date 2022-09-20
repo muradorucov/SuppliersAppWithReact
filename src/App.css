@@ -1,3 +1,9 @@
+.navbar-brand h2{
+    margin-bottom: 4px;
+    color: #fff;
+    font-weight: 700;
+}
+
 footer {
     background-color: rgb(112, 112, 119);
     color: #fff;
