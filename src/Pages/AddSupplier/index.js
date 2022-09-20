@@ -40,9 +40,10 @@ const AddSupplier = () => {
             && data.address.street
             && data.address.phone
             && data.address.postalCode) {
-                supplierAdd(data);
+            supplierAdd(data);
+            window.alert('Successful 🥳🥳🥳🥳🥳')
         } else {
-            window.alert('Bos data')
+            window.alert('Was unsuccessful !!!!')
         }
         supplierAdd(data);
     }
