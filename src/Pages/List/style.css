@@ -20,3 +20,16 @@
 .table tr button:active{
     border: 1px solid silver;
 }
+
+
+.list-item{
+    cursor: pointer;
+}
+.loading{
+    position: relative;
+}
+.deleteloader{
+    position: absolute;
+    top:25%;
+    right: 50%;
+}

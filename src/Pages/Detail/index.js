@@ -48,7 +48,7 @@ const Detail = () => {
                     </div>
                     <div className='detail-item'>Contact Name:<span>{detail?.contactName}</span>
                     </div>
-                    <div className='detail-item'>Street:<span>{detail?.address?.street}</span>
+                    <div className='detail-item'>Country:<span>{detail?.address?.country}</span>
                     </div>
                     <div className='detail-item'>City:<span>{detail?.address?.city}</span>
                     </div>
@@ -56,9 +56,9 @@ const Detail = () => {
                 <div className='row'>
                     <div className='detail-item'>Region:<span>{detail?.address?.region}</span>
                     </div>
-                    <div className='detail-item'>Phone:<span>{detail?.address?.phone}</span>
+                    <div className='detail-item'>Street:<span>{detail?.address?.street}</span>
                     </div>
-                    <div className='detail-item'>Country:<span>{detail?.address?.country}</span>
+                    <div className='detail-item'>Phone:<span>{detail?.address?.phone}</span>
                     </div>
                     <div className='detail-item'>Postal Code:<span>{detail?.address?.postalCode}</span>
                     </div>
